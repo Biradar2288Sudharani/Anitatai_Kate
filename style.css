@@ -210,7 +210,7 @@ body {
     display: flex;
     align-items: center;
     padding: 100px 2rem 2rem;
-    max-width: 1400px;
+    /* max-width: 1400px; */
     margin: 0 auto;
 }
 
@@ -219,11 +219,27 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .hero-text {
     padding-right: 2rem;
+}
+.section-with-video {
+  position: relative;
+  overflow: hidden; /* prevents video overflow */
+  height: 100vh; /* or any height you prefer */
+}
+
+.hero-text video.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  background-size: cover;
 }
 
 .hero-title {
@@ -238,7 +254,7 @@ body {
 
 .hero-subtitle {
     font-size: 1.2rem;
-    color: var(--text-light);
+    color:white;
     margin-bottom: 2.5rem;
     line-height: 1.8;
 }
@@ -696,4 +712,185 @@ body {
 /* 🔹 Smooth grid alignment */
 .row.gy-4 {
   row-gap: 2rem;
+}
+
+
+/* dedication Style */
+.dedication{
+    background-image: url("./images/dedication-background.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40rem;
+}
+    .page{
+      margin-top: 3rem;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px 20px;
+      box-sizing:border-box;
+    }
+.cardx{
+    background-color: #e4b572;
+    height: 17rem;
+    margin-top: 50px;
+}
+.h1 h1{
+   background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+    .cards{
+      width:100%;
+      max-width:1100px;
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:20px;
+      /* height: 15rem; */
+    }
+
+    /* responsive: 2 columns on tablet, 1 column on small */
+    @media (max-width:900px){
+      .cards{ grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width:520px){
+      .cards{ grid-template-columns: 1fr; }
+    }
+
+    .card1:hover{
+      transform:translateY(-6px);
+      box-shadow: 0 18px 30px rgba(15,23,42,0.12);
+    }
+
+    .thumbnail{
+      height: 10rem;
+      border-radius:8px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      /* color:var(--accent); */
+      font-size:5rem;
+      letter-spacing:0.6px;
+    }
+
+    .cardx h3{
+      margin:0;
+      font-size:20px;
+      text-align: center;
+    }
+
+/* Transforming */
+
+.transforming{
+    background-color: #cccdce;
+}
+.transforming-heading {
+    text-align: center;
+    padding: 50px 20px 20px;
+}
+
+.transforming-heading h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #333; /* Dark text color */
+    margin-bottom: 5px;
+}
+
+.highlight-text {
+    display: inline-block;
+    /* background-color: #f7e07e; */
+    padding: 2px 10px;
+    font-size: 1.8em;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+
+
+
+
+
+
+
+
+/* --- Content Sections Styling --- */
+
+.content-section {
+    display: flex;
+    align-items: center; /* Vertically center content */
+    max-width: 1200px;
+    margin: 60px auto; /* Center the section horizontally and add vertical spacing */
+    padding: 0 20px;
+    gap: 40px; /* Space between the image and text containers */
+}
+
+/* Makes the layout responsive for smaller screens */
+@media (max-width: 850px) {
+    .content-section {
+        flex-direction: column; /* Stack image and text vertically */
+        text-align: center;
+    }
+
+    .content-section.reverse-layout .text-container {
+        order: -1; /* Keep text above the image in the reversed section on mobile */
+    }
+}
+
+/* Image Container Styling */
+.image-container {
+    flex: 0 0 45%; /* Image takes about 45% of the space */
+    position: relative;
+    /* Optional: for the rounded/organic look, you might use a clip-path or background image */
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Basic rounded shape */
+    border-radius: 50%;
+    aspect-ratio: 1 / 1; /* Ensures the container is square for the circle shape */
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Text Container Styling */
+.text-container {
+    flex: 1; /* Text container takes up the remaining space */
+    padding: 20px;
+}
+
+.text-container h2 {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.text-container p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Read More Link Styling */
+.read-more {
+    display: inline-block;
+    color: #333; /* Dark text color */
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid #f7e07e; /* Yellow underline/highlight */
+    padding-bottom: 2px;
+}
+
+/* Reverse Layout for the Second Section */
+.content-section.reverse-layout {
+    flex-direction: row-reverse; /* Swaps the order of the image and text */
+}
+
+/* For the first section, if the image has text/overlay: */
+.image-container:first-child::after {
+    /* You could use a pseudo-element here for the colored background shape */
 }
