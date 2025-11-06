@@ -645,10 +645,10 @@ body {
 }
 
 /* 🔹 Responsive container spacing */
-.container.text-center {
+/* .container.text-center {
   margin-top: 40px;
   margin-bottom: 40px;
-}
+} */
 
 /* 🔹 Image rounded corners */
 .card-img-top {
@@ -935,3 +935,6 @@ body {
         .read-more:hover {
             background-color: #2980b9;
         }
+
+        
+        

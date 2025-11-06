@@ -1,0 +1,126 @@
+/* --- Global & Container Styles --- */
+
+.work-insight-section {
+    padding: 80px 0; /* Vertical spacing */
+    background-color: #f8f9fa; /* Light background color (bg-light equivalent) */
+}
+
+.container {
+    max-width: 1200px; /* Max width for content */
+    margin: 0 auto; /* Center the container */
+    padding: 0 15px; /* Horizontal padding */
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* --- Main Title and Underline Styling --- */
+
+.work-title-wrapper {
+    /* max-width: 400px;  */
+    margin: 0 auto;
+}
+
+.work-title {
+    font-weight: 700; /* Bold */
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-size: 2rem;
+    color: #333;
+}
+
+.work-title-underline {
+    height: 6px; 
+    width: 50%;
+    background-color: #004d99; /* Darker blue line */
+    margin-bottom: 40px; 
+    text-align: center;
+}
+
+/* --- Description Text Styling --- */
+
+.work-description-text {
+    max-width: 900px; 
+    margin: 0 auto 50px auto; /* Center and add bottom spacing */
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* --- Card Layout (Flexbox) --- */
+
+.card-row {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+    gap: 20px; /* Space between the cards */
+    justify-content: center; /* Center the cards */
+}
+
+.work-card {
+    /* Base width for 3 columns on desktop, accounting for gap */
+    width: calc(33.333% - 14px); 
+    display: flex; /* Flex container for internal stacking */
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    overflow: hidden;
+    min-height: 400px; /* Set a minimum height for consistency */
+}
+
+/* --- Card Content Styles --- */
+
+.card-img-wrapper {
+    height: 250px; /* Fixed height for the image area */
+    overflow: hidden;
+}
+
+.card-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers area without stretching */
+    display: block;
+}
+
+.card-title-box {
+    background-color: #000;
+    color: #fff;
+    padding: 12px 5px; 
+    text-align: center;
+    /* Uses h5, adjust font size if needed */
+}
+
+.card-title {
+    font-weight: 700;
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.card-description-text {
+    font-size: 0.9rem;
+    color: #555; 
+    text-align: center;
+    padding: 15px; 
+    line-height: 1.4;
+    margin-bottom: 0; 
+    /* Allows this text block to take up remaining vertical space */
+    flex-grow: 1; 
+}
+
+/* --- Responsiveness (Media Queries) --- */
+
+/* Tablet/Medium Screens (approx. 768px and up) */
+@media (max-width: 992px) {
+    .work-card {
+        /* Two cards per row */
+        width: calc(50% - 10px); 
+    }
+}
+
+/* Mobile Screens (approx. 576px and down) */
+@media (max-width: 576px) {
+    .work-card {
+        /* Single card per row */
+        width: 100%; 
+    }
+}
