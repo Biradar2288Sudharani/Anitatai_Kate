@@ -85,7 +85,7 @@ background: #CEC1FF;
 background: linear-gradient(135deg, #CEC1FF, #9BF2F2);
   color: #000;                  /* text becomes black */
 }
-
+ 
 /* Active page styling (Home) */
 .nav-link.active {
   background-color: #fff;
@@ -785,6 +785,20 @@ background: linear-gradient(135deg, #BC3EDD, #B000BF);
   font-size: 15px;
   line-height: 1.6;
   text-align: justify;
+}
+.see-more-btn {
+  background: linear-gradient(90deg, #6f42c1, #6610f2);
+  border: none;
+  padding: 10px 25px;
+  font-weight: 500;
+  border-radius: 25px;
+  transition: all 0.3s ease-in-out;
+}
+
+.see-more-btn:hover {
+  background: linear-gradient(90deg, #6610f2, #6f42c1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(102, 16, 242, 0.3);
 }
 
 /* 🔹 Responsive container spacing */
