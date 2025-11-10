@@ -10,6 +10,90 @@
     <link rel="stylesheet" href="development.css">
     <script defer src="contact.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <Style>
+        /* ===== FIX MOBILE RESPONSIVE FOR THIS SECTION ===== */
+#work-insight {
+    margin-top: 5rem;
+  width: 100%;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.work-title {
+  font-size: 26px;
+  text-align: center;
+  padding: 10px;
+}
+
+.work-description-text {
+  text-align: center;
+  font-size: 16px;
+  padding: 0 8px;
+  line-height: 1.4;
+}
+
+/* CARD CONTAINER */
+.card-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  width: 100%;
+  padding: 10px 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* CARD DESIGN FIX */
+.work-card {
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.work-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+/* ===== TABLET VIEW ===== */
+@media (max-width: 992px) {
+  .card-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== MOBILE VIEW (FIXED) ===== */
+@media (max-width: 600px) {
+  #work-insight {
+    padding: 5px;
+  }
+
+  .work-title {
+    font-size: 22px;
+  }
+
+  .work-description-text {
+    font-size: 14px;
+    padding: 0 4px;
+  }
+
+  .card-row {
+    grid-template-columns: 1fr !important;
+    gap: 15px;
+    padding: 0 5px;
+  }
+
+  .work-card {
+    padding: 10px;
+    margin: 0 auto;
+  }
+}
+    </Style>
 
 </head>
 <body>
@@ -59,13 +143,12 @@
 
    
       <!-- Right Section -->
-      <div class="nav-right">
-        <!-- Login Button -->
+      <!-- <div class="nav-right">
         <button class="login-btn">
           <i class="fas fa-user"></i>
           Log In
         </button>
-      </div>
+      </div> -->
 
         <!-- Mobile Menu Toggle -->
         <div class="hamburger">

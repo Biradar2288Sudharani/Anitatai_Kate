@@ -9,13 +9,69 @@
   <link rel="stylesheet" href="gallery.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
+
+<Style>
+  /* Hamburger DEFAULT hidden on desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1100;
+  margin-left: auto;
+}
+
+.hamburger span {
+  width: 30px;
+  height: 3px;
+  background:#fff;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+/* RESPONSIVE NAV (Mobile View) */
+@media (max-width: 992px) {
+  .hamburger {
+    display: flex; /* ✅ Show hamburger on mobile */
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    background: #445574fb; /* ✅ Your required color */
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    padding: 20px 0;
+    display: none;
+    z-index: 1000;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-item {
+    margin: 10px 0;
+  }
+
+  .nav-link {
+    color: white;
+    font-size: 18px;
+  }
+
+  .nav-link:hover {
+      background: #CEC1FF;
+      background: linear-gradient(135deg, #CEC1FF, #9BF2F2);
+      color: #000;
+  }
+}
+</Style>
+
 </head>
 
 <body>
-
-  <!-- <header class="header">
-    <h1>Gallery</h1>
-  </header> -->
 
   <!-- Header/Navigation -->
   <header class="header">
@@ -29,22 +85,6 @@
       <div class="nav-brand">
         <h1 class="logo" >Anitatai Kate<span></span></h1>
       </div>
-
-      <!-- Navigation Menu -->
-      <!-- <ul class="nav-menu">
-        <li class="nav-item">
-          <a href="index.html" class="nav-link active">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="development.html" class="nav-link">Development Insights</a>
-        </li>
-        <li class="nav-item">
-          <a href="gallery.html" class="nav-link">Gallery</a>
-        </li>
-        <li class="nav-item">
-          <a href="contact.html" class="nav-link">Contact Us</a>
-        </li>
-      </ul> -->
 
    <ul class="nav-menu">
   <li class="nav-item">
@@ -60,16 +100,14 @@
     <a href="contact.html" class="nav-link">Contact Us</a>
   </li>
 </ul>
-
    
       <!-- Right Section -->
-      <div class="nav-right">
-        <!-- Login Button -->
+      <!-- <div class="nav-right">
         <button class="login-btn">
           <i class="fas fa-user"></i>
           Log In
         </button>
-      </div>
+      </div> -->
 
         <!-- Mobile Menu Toggle -->
         <div class="hamburger">
@@ -83,7 +121,7 @@
 
   <br>
   <!-- TOWN INFRASTRUCTURE SLIDE (From previous context) -->
-<section class="town-infra-slide">
+<section class="town-infra-slide" style="margin-top: 5rem;">
     <div class="header-banner">
         <h1>Gallery</h1>
     </div>
@@ -156,6 +194,15 @@
       <i class="fas fa-comment"></i>
     </div>
   </footer>
+
+<script>
+  const menu = document.querySelector(".nav-menu");
+  const ham = document.querySelector(".hamburger");
+
+  ham.addEventListener("click", () => {
+    menu.classList.toggle("active");
+  });
+</script>
 
   <script src="gallery.js"></script>
 </body>
