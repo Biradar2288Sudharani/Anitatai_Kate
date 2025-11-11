@@ -1,12 +1,4 @@
-// Mobile Menu Toggle
-// const hamburger = document.querySelector('.hamburger');
-// const navMenu = document.querySelector('.nav-menu');
-// const navLinks = document.querySelectorAll('.nav-link');
 
-// hamburger.addEventListener('click', () => {
-//     hamburger.classList.toggle('active');
-//     navMenu.classList.toggle('active');
-// });
 
 // Clickable navbar
 const hamburger = document.querySelector(".hamburger");

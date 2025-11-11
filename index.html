@@ -174,21 +174,25 @@
   }
 }
 
-/* Footer responsive */
-@media (max-width: 768px) {
-  .footer-container {
-    text-align: center;
-    padding: 15px;
-  }
-
+/* ✅ MOBILE RESPONSIVE FOOTER FIX */
+@media (max-width: 600px) {
   .footer-links {
-    display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
   }
 
-  .footer-social {
-    margin-top: 15px;
+  .footer-social a {
+    font-size: 20px;
+  }
+
+  .footer-address {
+    font-size: 13px;
+  }
+
+  .chat-btn {
+    bottom: 15px;
+    right: 15px;
+    padding: 13px;
   }
 }
 
@@ -296,27 +300,50 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
     border-radius: 8px;  /* slight rounded corners, remove if you want sharp corners */
   }
 
-  /* Text right side */
-  .right h2 {
-    font-size: 24px;
-    margin-bottom: 8px;
-    font-weight: 700;
-  }
-
-  .right p {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 10px;
-    text-align: justify; /* makes paragraph neat and aligned */
-    padding: 0 5px;
-  }
-
   /* Bottom paragraph section */
   .about-detailed {
     padding: 18px;
     text-align: justify;
     font-size: 16px;
     line-height: 1.7;
+  }
+}
+/* FIX TEXT FOR MOBILE — CENTERED + READABLE */
+@media (max-width: 600px) {
+
+  .content-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .right {
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .right h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  .right p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    text-align: center; /* <-- centers text */
+  }
+
+  .right p strong {
+    display: block;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    text-align: center;
   }
 }
 
@@ -385,6 +412,8 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
     from { opacity: 0; transform: scale(0.9); }
     to { opacity: 1; transform: scale(1); }
   }
+  
+  
 </style>
 
 </head>
@@ -544,7 +573,7 @@ box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30p
           environmental drives and women empowerment programs to sports, education, and health campaigns — Anitatai 
           continues to create meaningful change at the grassroots level. Her vision of inclusive growth and active 
           citizen participation reflects her belief that when people and progress walk together, communities truly thrive.</p>
-        <a href="#" class="read-more">Read More</a>
+        <a href="./empowering.html" class="read-more">Read More</a>
       </div>
     </section>
   </section>

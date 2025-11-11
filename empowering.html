@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anitatai Kate</title>
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="development.css">
+    <script defer src="contact.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+<style>
+  /* RESPONSIVE NAV (Mobile View) */
+/* ===== HAMBURGER DEFAULT ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  margin-left: auto;
+  z-index: 1100;
+}
+.hamburger span {
+  width: 30px;
+  height: 3px;
+  background: #fff;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+/* ===== MOBILE NAV ===== */
+@media (max-width: 992px) {
+  .hamburger {
+    display: flex;
+  }
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background: #445574fb;
+    width: 100%;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    padding: 15px 0;
+    text-align: center;
+  }
+  .nav-menu.active {
+    display: flex;
+  }
+  .nav-item {
+    margin: 12px 0;
+  }
+  .nav-link {
+    font-size: 18px;
+    color: white;
+  }
+  .nav-link:hover {
+    background: linear-gradient(135deg, #CEC1FF, #9BF2F2);
+    color: black;
+    padding: 6px 12px;
+    border-radius: 5px;
+  }
+}
+
+.projects-section {
+  margin: 3rem auto !important;
+  padding: 40px 15px;
+  width: 100%;
+}
+
+/* ======== RESPONSIVE CAROUSEL CARDS ======== */
+.carousel {
+  gap: 15px;
+  padding: 10px;
+}
+
+.project-card {
+  width: 260px;
+}
+
+.project-card img {
+  height: 170px;
+}
+
+/* Buttons Smaller on mobile */
+.carousel-btn {
+  width: 35px;
+  height: 35px;
+  font-size: 1.4rem;
+}
+
+/* ======== RESPONSIVE TEXT ======== */
+.section-title {
+  font-size: 1.8rem;
+  color: #333;;
+}
+
+.section-desc {
+  font-size: 0.95rem;
+  padding: 0 10px;
+}
+
+/* ======== TABLET & MOBILE ADJUSTMENTS ======== */
+@media (max-width: 768px) {
+  .project-card {
+    width: 220px;
+  }
+
+  .project-card img {
+    height: 140px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .section-desc {
+    font-size: 0.9rem;
+  }
+}
+
+/* ======== SMALL PHONES ======== */
+@media (max-width: 480px) {
+  .project-card {
+    width: 190px;
+  }
+
+  .project-card img {
+    height: 120px;
+  }
+
+  .carousel-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .section-desc {
+    font-size: 0.85rem;
+  }
+
+}
+  
+/* ✅ MOBILE RESPONSIVE FOOTER FIX */
+@media (max-width: 600px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .footer-social a {
+    font-size: 20px;
+  }
+
+  .footer-address {
+    font-size: 13px;
+  }
+
+  .chat-btn {
+    bottom: 15px;
+    right: 15px;
+    padding: 13px;
+  }
+}
+
+  /* Model.html file css */
+    /* Carousel Section */
+.projects-section {
+  text-align: center;
+  padding: 60px 40px;
+  /* background: #000; */
+  color: #fff;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.section-desc {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color:#555;
+  
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 25px;
+  padding: 20px;
+  scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.project-card {
+  flex: 0 0 auto;
+  width: 300px;
+  background: #111;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-info {
+  padding: 20px;
+}
+
+.card-info h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.card-info p {
+  color: #bbb;
+  font-size: 0.95rem;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  color: #000;
+  border: none;
+  font-size: 1.8rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background: #ffcc00;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+</style>
+
+</head>
+<body>
+    <!-- Navbar -->
+   <header class="header">
+    <nav class="navbar">
+      <!-- Logo -->
+
+      <div class="Nav-logo">
+        <img src="./images/Nav-logo.jpg" alt="AnitaTai-logo">
+      </div>
+
+      <div class="nav-brand">
+        <h1 class="logo" >Anitatai Kate<span></span></h1>
+      </div>
+
+    <ul class="nav-menu">
+  <li class="nav-item">
+    <a href="index.html" class="nav-link ">Home</a>
+  </li>
+  <li class="nav-item">
+    <a href="development.html" class="nav-link">Development Insights</a>
+  </li>
+  <li class="nav-item">
+    <a href="gallery.html" class="nav-link">Gallery</a>
+  </li>
+  <li class="nav-item">
+    <a href="contact.html" class="nav-link">Contact Us</a>
+  </li>
+</ul>
+        <!-- Mobile Menu Toggle -->
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+<br>
+
+<!-- Cards starting -->
+ <section class="projects-section" style="margin: 10rem;">
+  <h2 class="section-title">Our Key Servises</h2>
+  <p class="section-desc">
+    Under the visionary leadership of Mrs. Anitatai Sandeep Kate, our initiatives focus on empowering communities 
+    through impactful programs, transparent governance, and citizen-driven development. From social welfare and health 
+    drives to education, environmental care, and women empowerment, every service reflects a deep commitment to public 
+    good and sustainable progress.
+  </p>
+
+  <div class="carousel-container">
+    <button class="carousel-btn prev">&#8592;</button>
+
+    <div class="carousel">
+      <div class="project-card">
+        <img src="images/WhatsApp Image 2025-11-03 at 08.04.23_f1f0f240.jpg" alt="Project 1">
+        <div class="card-info">
+          <h3>Wall of Humanity</h3>
+          <p>To support the needy and promote kindness, a social initiative called the Wall of Humanity was started at 
+            PK Chowk, Pimple Saudagar, based on the noble concept of Mrs. Anitatai Sandeep Kate.The initiative 
+            encourages people to donate essential items and help those in need, spreading compassion within the community.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="images/OCS_1337.JPG" alt="Project 2">
+        <div class="card-info">
+          <h3>Saudagar Premier League</h3>
+          <p>The Saudagar Cricket Premier League was organized by Mrs. Anitatai Sandeep Kate in Pimple Saudagar to 
+            promote the spirit of sportsmanship among the youth. The tournament featured exciting matches and a range
+             of attractive prizes, encouraging young players to stay active, competitive, and united through the love 
+             of cricket.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="images/Robotic Day Celebration.jpg" alt="Project 3">
+        <div class="card-info">
+          <h3>Robotic Day Celebration</h3>
+          <p>An innovative initiative by Mrs. Anitatai Sandeep Kate in collaboration with Challenger Public School was 
+            organized in Pimple Saudagar. The event aimed to encourage children to explore creativity, technology, and 
+            innovation through hands-on robotics activities. It was an inspiring day that sparked curiosity and 
+            future-ready thinking among young minds!</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="images/SAG08147.JPG" alt="Project 4">
+        <div class="card-info">
+          <h3>Jallosh Shopping Festival</h3>
+          <p>The Jallosh Shopping Festival was organized by Mrs. Anitatai Sandeep Kate in Pimple Saudagar, bringing joy and excitement to the community.
+For the first time after the Corona pandemic, people experienced a heart-warming shopping celebration filled with energy and togetherness.
+The event featured Zumba sessions.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="images/Women’s Day Celebration.jpg" alt="Project 5">
+        <div class="card-info">
+          <h3>Women’s Day Celebration </h3>
+          <p>An empowering initiative by Mrs. Anitatai Sandeep Kate was organized in Pimple Saudagar to celebrate the strength and achievements of women.
+The event aimed to inspire confidence, unity, and empowerment among women from all walks of life.
+Together, let’s continue to support and uplift every woman in our community!</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="images/DSC_5392.JPG" alt="Project 6">
+        <div class="card-info">
+          <h3>Happy Street Initiative </h3>
+          <p>Mrs. Anitatai Sandeep Kate has always emphasized that the residents of Pimple Saudagar should live happily and healthily.
+To spread joy and positivity, the Happy Street initiative was organized, featuring activities like yoga, Zumba, cycling, sports, painting competitions, selfie points, children’s play areas.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="images/cloth-bag-distribution.jpg" alt="Project 7">
+        <div class="card-info">
+          <h3>Cloth Bag Distribution Drive</h3>
+          <p>An inspiring initiative by Mrs. Anitatai Sandeep Kate was organized in Pimple Saudagar to promote the use of eco-friendly cloth bags.
+The drive aimed to encourage citizens to avoid plastic and protect our environment from pollution.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="images/health.jpg" alt="Project 8">
+        <div class="card-info">
+          <h3>Blood Donation Camp</h3>
+          <p>A noble initiative by Mrs. Anitatai Sandeep Kate was organized in Pimple Saudagar on the occasion of Mr. Sandeep Vitthal Kate’s birthday.
+Many citizens came forward to donate blood, spreading the message of humanity and compassion.
+A heartfelt thank you to all the donors for making this initiative a great success!</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="images/World Environment Day.jpg" alt="Project 9">
+        <div class="card-info">
+          <h3>World Environment Day</h3>
+          <p>An inspiring initiative by Mrs. Anitatai Sandeep Kate was organized in Pimple Saudagar to spread awareness about environmental conservation.
+Citizens actively participated in tree plantation and cleanliness activities, promoting a greener and healthier community.</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-btn next">&#8594;</button>
+  </div>
+</section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Footer Links -->
+            <div class="footer-links">
+                <a href="index.html">Home</a> |
+                <a href="development.html">Development Insights</a> |
+                <a href="gallery.html">Gallery</a> |
+                <a href="contact.html">Contact Us</a>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="footer-social">
+                <a
+                    href="https://www.facebook.com/anitasandeepkate?mibextid=wwXIfr&rdid=59gz7uJl6RROWRuN&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F16ynVeaND9%2F%3Fmibextid%3DwwXIfr#"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/918975922020" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.linkedin.com/in/sandeep-kate-043b28197/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/anita_sandeep_kate?igsh=MTA4MnhkcHFyY3FpMw%3D%3D&utm_source=qr"><i
+                        class="fab fa-instagram"></i></a>
+            </div>
+
+            <!-- Address -->
+            <div class="footer-address">
+                <p>Office Address : PK Chowk, Shiv Sai Lane, </p>
+                <p>Pimpale Saudagar, Pune, Maharashtra, 411027</p>
+                <p>8975922020</p>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>© 2025-26 All Rights Reserved | Anitatai Kate Nagar Sevak |</p>
+            </div>
+        </div>
+
+        <!-- Floating Chat Icon -->
+        <div class="chat-btn" id="chatBtn">
+            <i class="fas fa-comment"></i>
+        </div>
+    </footer>
+    <script>
+      // CAROUSEL BUTTONS
+const carousel = document.querySelector('.carousel');
+const prevBtn = document.querySelector('.carousel-btn.prev');
+const nextBtn = document.querySelector('.carousel-btn.next');
+
+nextBtn.addEventListener('click', () => {
+  carousel.scrollBy({ left: 350, behavior: 'smooth' });
+});
+
+prevBtn.addEventListener('click', () => {
+  carousel.scrollBy({ left: -350, behavior: 'smooth' });
+});
+
+// ✅ FIXED MOBILE NAV
+const menu = document.querySelector(".nav-menu");
+const ham = document.querySelector(".hamburger");
+
+ham.addEventListener("click", () => {
+  menu.classList.toggle("active");
+});
+
+
+    </script>
+
+</body>
+
+</html>

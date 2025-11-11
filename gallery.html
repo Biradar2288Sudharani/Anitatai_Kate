@@ -6,11 +6,135 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anitatai Kate</title>
   <link rel="icon" href="images/favicon.png" type="image/png">
-  <link rel="stylesheet" href="gallery.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css">
 
 <Style>
+/* ===== GALLERY STYLING ===== */
+.gallery-section {
+  padding: 40px 15px;
+  text-align: center;
+  background: #fff;
+}
+
+.gallery-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #004b73;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  padding: 5px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* === MOBILE RESPONSIVE === */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery-grid img {
+    height: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery-grid img {
+    height: 120px;
+  }
+}
+/* Footer Styles */
+.footer {
+    background-color: #004b73;
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #00ffff;
+}
+
+.footer-social a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #00ffff;
+}
+
+.footer-address {
+    margin-top: 20px;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    font-size: 0.85rem;
+    opacity: 0.9;
+}
+
+/* Floating Chat Button */
+.chat-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #d7ff00;
+    color: #000;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.chat-btn:hover {
+    transform: scale(1.1);
+    background-color: #c8ff00;
+}
+
   /* Hamburger DEFAULT hidden on desktop */
 .hamburger {
   display: none;
@@ -100,15 +224,6 @@
     <a href="contact.html" class="nav-link">Contact Us</a>
   </li>
 </ul>
-   
-      <!-- Right Section -->
-      <!-- <div class="nav-right">
-        <button class="login-btn">
-          <i class="fas fa-user"></i>
-          Log In
-        </button>
-      </div> -->
-
         <!-- Mobile Menu Toggle -->
         <div class="hamburger">
           <span></span>
@@ -121,62 +236,98 @@
 
   <br>
   <!-- TOWN INFRASTRUCTURE SLIDE (From previous context) -->
-<section class="town-infra-slide" style="margin-top: 5rem;">
-    <div class="header-banner">
+<!-- ===== UPDATED GALLERY SECTION (28 IMAGES) ===== -->
+<section class="gallery-section">
+ <div class="header-banner">
         <h1>Gallery</h1>
     </div>
-
-    <div class="image-collage">
-        <div class="collage-item img-1">
-            <img src="./images/blood-donation-camp.jpg" alt="Small photo collage of road works">
-        </div>
-        <div class="collage-item img-2">
-            <img src="./images/DSC01264.JPG" alt="Group of people standing outdoors">
-        </div>
-        <div class="collage-item img-3">
-            <img src="./images/Women’s Day Celebration.jpg" alt="Entrance gate to a facility">
-        </div>
-        <div class="collage-item img-4">
-            <img src="./images/DSC01479.JPG" alt="Group on a track">
-        </div>
-        <div class="collage-item img-5">
-            <img src="./images/DSC_5392.JPG" alt="Group standing under a wooden structure">
-        </div>
-        <div class="collage-item img-6">
-            <img src="./images/DSC_5370.JPG" alt="People sitting around a table">
-        </div>
-        <div class="collage-item img-7">
-            <img src="./images/DSC_5395.JPG" alt="Newspaper clipping about development">
-        </div>
-        <div class="collage-item img-8">
-            <img src="./images/img1.JPG" alt="Construction site or empty lot">
-        </div>
-        <div class="collage-item img-9">
-            <img src="./images/05.jpeg" alt="Small photo collage of road works">
-        </div>
-        <div class="collage-item img-10">
-            <img src="images/07.jpeg" alt="Group of people standing outdoors">
-        </div>
-        <div class="collage-item img-11">
-            <img src="images/04.jpeg" alt="Entrance gate to a facility">
-        </div>
-        <div class="collage-item img-12">
-            <img src="images/08.jpeg" alt="Group on a track">
-        </div>
-        <div class="collage-item img-13">
-            <img src="images/09.jpeg" alt="Group standing under a wooden structure">
-        </div>
-        <div class="collage-item img-14">
-            <img src="images/10.jpeg" alt="People sitting around a table">
-        </div>
-        <div class="collage-item img-15">
-            <img src="images/11.jpeg" alt="Newspaper clipping about development">
-        </div>
-        <div class="collage-item img-16">
-            <img src="images/001.jpeg" alt="Construction site or empty lot">
-        </div>
-    </div>
+  <div class="gallery-grid">
+    <img src="./images/001.jpeg"  alt="1">
+    <img src="./images/World Environment Day.jpg"  alt="2">
+    <img src="./images/WhatsApp Image 2025-11-03 at 08.04.23_f1f0f240.jpg"  alt="3">
+    <img src="./images/WhatsApp Image 2025-11-03 at 08.04.17_594a74ba.jpg"  alt="4">
+    <img src="./images/WhatsApp Image 2025-11-03 at 08.04.15_ab918882.jpg"  alt="5">
+    <img src="./images/WhatsApp Image 2025-11-03 at 08.04.14_5459d75d.jpg"  alt="6">
+    <img src="./images/WhatsApp Image 2025-11-03 at 08.04.13_928ae872.jpg"  alt="7">
+    <img src="./images/WhatsApp Image 2025-11-03 at 08.04.11_db831bab.jpg"  alt="8">
+    <img src="./images/WhatsApp Image 2025-11-03 at 08.04.05_c8697e50.jpg"  alt="9">
+    <img src="./images/WhatsApp Image 2025-11-03 at 08.04.03_f4ec8c8a.jpg" alt="10">
+    <img src="./images/WhatsApp Image 2025-11-03 at 08.04.00_f25c8b73.jpg" alt="11">
+    <img src="./images/2022.jpeg" alt="12">
+    <img src="./images/011.jpeg" alt="13">
+    <img src="./images/04.jpeg" alt="14">
+    <img src="./images/addr-citizen.jpg" alt="15">
+    <img src="./images/blood-donation-camp.jpg" alt="16">
+    <img src="./images/2025.jpeg" alt="17">
+    <img src="./images/cloth-bag-distribution.jpg" alt="18">
+    <img src="./images/Wall of Humanity.jpg" alt="19">
+    <img src="./images/Saudagar Premier League.JPG" alt="20">
+    <img src="./images/Robotic Day Celebration.jpg" alt="21">
+    <img src="./images/OCS_1337.JPG" alt="22">
+    <img src="./images/Jallosh Shopping Festival.JPG" alt="23">
+    <img src="./images/Women’s Day Celebration.jpg" alt="24">
+    <img src="./images/SAG08147.JPG" alt="25">
+    <img src="./images/SAG08992.JPG" alt="26">
+    <img src="./images/DSC01479.JPG" alt="27">
+    <img src="./images/DSC_5392.JPG" alt="28">
+  </div>
 </section>
+
+<style>
+/* ===== GALLERY STYLING ===== */
+.gallery-section {
+  padding: 40px 15px;
+  text-align: center;
+  background: #fff;
+}
+
+.gallery-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #004b73;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  padding: 5px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* === MOBILE RESPONSIVE === */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery-grid img {
+    height: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery-grid img {
+    height: 120px;
+  }
+}
+</style>
+
 
       <!-- Footer Section -->
   <footer class="footer">
@@ -220,6 +371,67 @@
   </footer>
 
 <script>
+
+const addImageBtn = document.getElementById("addImageBtn");
+const imageInput = document.getElementById("imageInput");
+const galleryContainer = document.getElementById("galleryContainer");
+
+// === Load saved images from localStorage ===
+window.addEventListener("DOMContentLoaded", () => {
+  const savedImages = JSON.parse(localStorage.getItem("galleryImages")) || [];
+  savedImages.forEach(name => addImageToGallery(name, false));
+});
+
+// === Add Image Button ===
+addImageBtn.addEventListener("click", () => imageInput.click());
+
+// === Handle Image Upload ===
+imageInput.addEventListener("change", (event) => {
+  const files = Array.from(event.target.files);
+  files.forEach(file => {
+    const fileName = file.name;
+    addImageToGallery(fileName, true);
+  });
+  event.target.value = "";
+});
+
+// === Function to Add Image ===
+function addImageToGallery(name, saveToStorage = true) {
+  const imageCard = document.createElement("div");
+  imageCard.classList.add("image-card");
+
+  const newImg = document.createElement("img");
+  newImg.src = `images/${name}`; // Make sure image is in /images folder
+  newImg.alt = "Gallery Image";
+
+  const deleteBtn = document.createElement("button");
+  deleteBtn.classList.add("delete-btn");
+  deleteBtn.innerHTML = "×";
+
+  deleteBtn.addEventListener("click", () => deleteImage(imageCard, name));
+
+  imageCard.appendChild(newImg);
+  imageCard.appendChild(deleteBtn);
+  galleryContainer.appendChild(imageCard);
+
+  if (saveToStorage) {
+    const savedImages = JSON.parse(localStorage.getItem("galleryImages")) || [];
+    if (!savedImages.includes(name)) {
+      savedImages.push(name);
+      localStorage.setItem("galleryImages", JSON.stringify(savedImages));
+    }
+  }
+}
+
+// === Delete Image ===
+function deleteImage(card, name) {
+  card.remove();
+  let savedImages = JSON.parse(localStorage.getItem("galleryImages")) || [];
+  savedImages = savedImages.filter(img => img !== name);
+  localStorage.setItem("galleryImages", JSON.stringify(savedImages));
+}
+
+
   const menu = document.querySelector(".nav-menu");
   const ham = document.querySelector(".hamburger");
 
@@ -227,8 +439,6 @@
     menu.classList.toggle("active");
   });
 </script>
-
-  <script src="gallery.js"></script>
 </body>
 
 </html>

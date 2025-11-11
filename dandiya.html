@@ -93,6 +93,39 @@
     margin: 0 auto;
   }
 }
+
+@media (max-width: 992px) {
+  .hamburger {
+    display: flex;
+  }
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background: #445574fb;
+    width: 100%;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    padding: 15px 0;
+    text-align: center;
+  }
+  .nav-menu.active {
+    display: flex;
+  }
+  .nav-item {
+    margin: 12px 0;
+  }
+  .nav-link {
+    font-size: 18px;
+    color: white;
+  }
+  .nav-link:hover {
+    background: linear-gradient(135deg, #CEC1FF, #9BF2F2);
+    color: black;
+    padding: 6px 12px;
+    border-radius: 5px;
+  }
+}
     </Style>
 
 </head>
@@ -291,6 +324,16 @@
             <i class="fas fa-comment"></i>
         </div>
     </footer>
+
+<script>
+  const menu = document.querySelector(".nav-menu");
+const ham = document.querySelector(".hamburger");
+
+ham.addEventListener("click", () => {
+  menu.classList.toggle("active");
+});
+
+</script>
 
 </body>
 
